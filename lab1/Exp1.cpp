@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Student
@@ -7,6 +6,7 @@ class Student
 private:
     int rollNo;
     string name;
+    string branch;
     int age;
     float marks;
 
@@ -20,6 +20,10 @@ public:
 
         cout << "Enter Name: ";
         getline(cin, name);
+
+        cin.ignore();
+        cout << "Enter Branch :";
+        getline(cin , branch);
 
         cout << "Enter Age: ";
         cin >> age;
@@ -47,6 +51,7 @@ public:
         cout << "\n--- Student Record ---\n";
         cout << "Roll Number : " << rollNo << endl;
         cout << "Name        : " << name << endl;
+        cout << "Branch      :  " << branch <<endl;
         cout << "Age         : " << age << endl;
         cout << "Marks       : " << marks << endl;
         cout << "Grade       : " << calculateGrade() << endl;
@@ -56,9 +61,12 @@ public:
 int main()
 {
     Student s1;
+    Student s2;
 
     s1.input();
+    s2.input();
     s1.display();
+    s2.display();
 
     return 0;
 }
