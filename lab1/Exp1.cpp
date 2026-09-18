@@ -10,6 +10,8 @@ private:
     int age;
     float marks;
 
+
+    
 public:
     void input()
     {
