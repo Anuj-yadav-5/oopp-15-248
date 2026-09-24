@@ -1,74 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Student
-{
+class Student {
 private:
-    int rollNo;
     string name;
+    int roll;
     string branch;
-    int age;
-    float marks;
 
-
-    
 public:
-    void input()
-    {
-        cout << "Enter Roll Number: ";
-        cin >> rollNo;
+    // Constructor using initializer
+    Student() : name(""), roll(0), branch("") {}
 
-        cin.ignore();
+    void input() {
+        cout << "Enter name: ";
+        cin >> name;
 
-        cout << "Enter Name: ";
-        getline(cin, name);
+        cout << "Enter roll: ";
+        cin >> roll;
 
-        cin.ignore();
-        cout << "Enter Branch :";
-        getline(cin , branch);
-
-        cout << "Enter Age: ";
-        cin >> age;
-
-        cout << "Enter Marks: ";
-        cin >> marks;
+        cout << "Enter branch: ";
+        cin >> branch;
     }
 
-    char calculateGrade()
-    {
-        if (marks >= 90)
-            return 'A';
-        else if (marks >= 80)
-            return 'B';
-        else if (marks >= 70)
-            return 'C';
-        else if (marks >= 60)
-            return 'D';
-        else
-            return 'F';
-    }
-
-    void display()
-    {
-        cout << "\n--- Student Record ---\n";
-        cout << "Roll Number : " << rollNo << endl;
-        cout << "Name        : " << name << endl;
-        cout << "Branch      :  " << branch <<endl;
-        cout << "Age         : " << age << endl;
-        cout << "Marks       : " << marks << endl;
-        cout << "Grade       : " << calculateGrade() << endl;
+    void show() {
+        cout << "Name: " << name << endl;
+        cout << "Roll: " << roll << endl;
+        cout << "Branch: " << branch << endl;
     }
 };
 
-int main()
-{
-    Student s1;
-    Student s2;
+int main() {
 
+    Student s1, s2;
+
+    cout << "Enter details of Student 1:" << endl;
     s1.input();
+
+    cout << "\nEnter details of Student 2:" << endl;
     s2.input();
-    s1.display();
-    s2.display();
+
+    cout << "\nStudent 1 Details" << endl;
+    s1.show();
+
+    cout << "\nStudent 2 Details" << endl;
+    s2.show();
 
     return 0;
 }
